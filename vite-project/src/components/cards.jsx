@@ -82,12 +82,12 @@ function Cards() {
            
               <div className="flex flex-wrap gap-2 mb-5">
                 {project.tech.map((tech, idx) => (
-                  <span
+                  <h1
                     key={idx}
                     className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full"
                   >
                     {tech}
-                  </span>
+                  </h1>
                 ))}
               </div>
 
