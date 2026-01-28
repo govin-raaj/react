@@ -1,10 +1,10 @@
 function Hero() {
   return (
-    <section className="bg-gray-900 text-white px-6 py-20 text-center">
-      <h1 className=" text-4xl md:text-5xl font-bold mb-6">
+    <section className="bg-gray-900 text-white px-6 py-20 text-center mx-2 my-2 rounded-lg">
+      <h1 className=" text-3xl md:text-5xl font-bold mb-6">
         Hi, I'm Govin 👋
       </h1>
-       <p className="text-gray-300 max-w-2xl mx-auto mb-10 ">
+       <p className="text-gray-300 max-w-2xl mx-auto mb-10 md:text-2xl  ">
         I'm an <span className="text-purple-400 font-semibold">AI / MLOps Engineer </span> 
         building end-to-end machine learning systems — from data ingestion and model
         training to CI/CD pipelines and cloud deployment on AWS.

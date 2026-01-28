@@ -52,15 +52,15 @@ const Projects = [
 function Cards() {
   return (
     <section className="bg-gray-100 px-6 py-20">
-      <h2 className="text-3xl font-bold text-center mb-14">
+      <h2 className="md:text-4xl  text-2xl font-bold text-center mb-14">
         Projects
       </h2>
 
-      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 ">
         {Projects.map((project, i) => (
           <div
             key={i}
-            className="bg-white rounded-xl shadow-md hover:shadow-xl transition overflow-hidden flex flex-col"
+            className="bg-white rounded-xl shadow-md hover:shadow-xl transition overflow-hidden flex flex-col hover:scale-105"
           >
         
             <img
@@ -70,12 +70,12 @@ function Cards() {
             />
 
         
-            <div className="p-6 flex flex-col flex-1">
+            <div className="p-6 flex flex-col ">
               <h3 className="text-xl font-bold mb-3">
                 {project.title}
               </h3>
 
-              <p className="text-gray-700 text-sm mb-4 leading-relaxed flex-1">
+              <p className="text-gray-700 text-sm mb-4 flex-1">
                 {project.desc}
               </p>
 
@@ -94,9 +94,7 @@ function Cards() {
               
               <a
                 href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-auto text-center bg-gray-900 text-white py-2 rounded-md hover:bg-gray-800 transition"
+                className="mt-auto text-center bg-gray-900 text-white py-2 rounded-md hover:scale-105"
               >
                 View on GitHub
               </a>
