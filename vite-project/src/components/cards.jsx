@@ -1,108 +1,55 @@
-const Projects = [
-  {
-    title: "RAG Chatbot",
-    desc: "An end-to-end RAG (Retrieval-Augmented Generation) system demonstrating modern AI engineering practices — from document ingestion, text chunking, embedding generation, vector storage, semantic search, conversational response generation, Dockerization, CI/CD, to AWS EC2 deployment.",
-    image: "https://imgs.search.brave.com/_lRl2LgDXSsmEagoHoewfn6-VOBe8kVlT-hg-e8OMLM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzI5L2U0/Lzc2LzI5ZTQ3Njk2/ZmU0MGVkZDc2NGQ4/NTNlNTRlYTk0ODFl/LmpwZw",
-    tech: [
-      "LLMs",
-      "Vector Search",
-      "Embeddings",
-      "FastAPI",
-      "Docker",
-      "CI/CD",
-      "AWS EC2",
-      "ECR",
-    ],
-    github: "https://github.com/govin-raaj/Rag_chatbot",
-  },
-  {
-    title: "Vehicle Insurance MLOps",
-    desc: "An end-to-end MLOps pipeline demonstrating modern machine learning practices – from data ingestion, validation, transformation, training, model registry, CI/CD, to cloud deployment on AWS EC2.",
-    image: "https://imgs.search.brave.com/_lRl2LgDXSsmEagoHoewfn6-VOBe8kVlT-hg-e8OMLM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzI5L2U0/Lzc2LzI5ZTQ3Njk2/ZmU0MGVkZDc2NGQ4/NTNlNTRlYTk0ODFl/LmpwZw",
-    tech: [
-      "Python",
-      "Pandas",
-      "NumPy",
-      "MongoDB Atlas",
-      "FastAPI",
-      "Docker",
-      "CI/CD",
-      "AWS EC2",
-    ],
-    github: "https://github.com/govin-raaj/Vehicle-Insurance-",
-  },
-  {
-    title: "Sentiment Analysis (EKS)",
-    desc: "An end-to-end MLOps pipeline taking a machine learning model from development to production on AWS EKS, using MLflow for experiment tracking, DVC for data versioning, Docker for containerization, CI/CD via GitHub Actions, and Prometheus + Grafana for monitoring.",
-    image: "https://imgs.search.brave.com/_lRl2LgDXSsmEagoHoewfn6-VOBe8kVlT-hg-e8OMLM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzI5L2U0/Lzc2LzI5ZTQ3Njk2/ZmU0MGVkZDc2NGQ4/NTNlNTRlYTk0ODFl/LmpwZw",
-    tech: [
-      "Python",
-      "MLflow",
-      "DVC",
-      "Docker",
-      "AWS EKS",
-      "GitHub Actions",
-      "Prometheus",
-      "Grafana",
-    ],
-    github: "https://github.com/govin-raaj/Movie_sentiment_analysis",
-  },
-]
-
-function Cards() {
+function Card({
+  title,
+  description,
+  image,
+  repo,
+  demo,
+  tech = [],
+}) {
   return (
-    <section className="bg-gray-100 px-6 py-20">
-      <h2 className="md:text-4xl  text-2xl font-bold text-center mb-14">
-        Projects
-      </h2>
+    <section
+      className="
+        bg-linear-45 from-[#E2AB7F] to-[#C05850] p-5 rounded-xl border-3 border-white shadow-md hover:shadow-xl  hover:shadow-white duration-1000 hover:-translate-y-2 overflow-hidden ">
+      <div className="flex items-center gap-4 mb-4">
+        <img
+          src={image.src}
+          alt={image.alt}
+          className=" w-16 h-16 sm:w-20 sm:h-20 rounded-full ring-2 ring-black"/>
 
-      <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 ">
-        {Projects.map((project, i) => (
-          <div
-            key={i}
-            className="bg-white rounded-xl shadow-md hover:shadow-xl transition overflow-hidden flex flex-col hover:scale-105"
-          >
-        
-            <img
-              src={project.image}
-              alt={project.title}
-              className="h-48 w-full object-cover"
-            />
+        <h3 className="text-xl sm:text-2xl font-extrabold">{title}</h3>
+      </div>
 
-        
-            <div className="p-6 flex flex-col ">
-              <h3 className="text-xl font-bold mb-3">
-                {project.title}
-              </h3>
+      <p className="text-sm sm:text-base font-medium mb-4">
+        {description}
+      </p>
 
-              <p className="text-gray-700 text-sm mb-4 flex-1">
-                {project.desc}
-              </p>
 
-           
-              <div className="flex flex-wrap gap-2 mb-5">
-                {project.tech.map((tech) => (
-                  <h1
-                    className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full hover:scale-105"
-                  >
-                    {tech}
-                  </h1>
-                ))}
-              </div>
-
-              
-              <a
-                href={project.github}
-                className="mt-auto text-center bg-gray-900 text-white py-2 rounded-md hover:scale-105"
-              >
-                View on GitHub
-              </a>
-            </div>
-          </div>
+      <div className="flex flex-wrap gap-2 mb-4">
+        {tech.map((item) => (
+          <span
+            key={item}
+            className=" text-xs font-semibold  bg-white/20 px-3 py-1 rounded-full hover:translate-y-1 duration-75">{item} </span>
         ))}
       </div>
+
+
+      <div className="flex gap-3">
+        {repo && (
+          <a
+            href={repo}
+            target="_blank"
+            className="  text-sm font-bold  bg-black text-white px-4 py-2 rounded-lg  hover:bg-gray-800 hover:scale-105" >GitHub</a>
+        )}
+
+        {demo && (
+          <a
+            href={demo}
+            target="_blank"
+            className="  text-sm font-bold  bg-white text-black px-4 py-2 rounded-lg  hover:bg-gray-200 hover:scale-105" >Live Demo</a>
+        )}
+      </div>
     </section>
-  )
+  );
 }
 
-export default Cards
+export default Card;
