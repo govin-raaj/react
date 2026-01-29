@@ -29,7 +29,8 @@ function App() {
           { name: "Features", url: "#", class: "text-black font-medium hover:scale-110 duration-100" },
           { name: "Contact", url: "#", class: "text-black font-medium hover:scale-110 duration-100" },
         ]}
-        classNav="flex items-center justify-between px-4 rounded-full py-2 mx-3 my-3 bg-linear-45 from-[#C05850] to-[#E2AB7F] ring-2 ring-white"
+        
+        classNav="flex items-center justify-between px-4 rounded-full py-2 mx-3 my-3 bg-gradient-to-r from-[#2A7B9B] via-[#57C785] to-[#EDDD53] ring-2 ring-white overflow-"
       />
 
       <Hero {...heroVariants.home} />
