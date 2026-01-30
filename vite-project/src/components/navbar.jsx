@@ -10,7 +10,7 @@ function Navbar({
   const [menu , setMenu] = useState(false);
 
   return (
-    <nav className={`${classNav} relative  `}>
+    <nav className={`${classNav} relative   `}>
      
        <h1 className={title.class}>{title.text}</h1>
 
