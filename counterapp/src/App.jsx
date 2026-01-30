@@ -5,6 +5,8 @@ function App() {
 
   const [counters, setCounters] = useState([{value:0,step:1}, {value:0,step:1}])
 
+  const [theme,setTheme]=useState("light")
+
   const increment = (index) => {
     setCounters(prev=> prev.map((counter,i)=>{
       return i===index? {...counter,value:counter.value+counter.step}: counter
@@ -26,20 +28,24 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen w-full bg-gradient-to-b from-gray-900 to-gray-600 text-white relative overflow-hidden flex items-center justify-center" >
+      <div className={`min-h-screen w-full flex items-center justify-center overflow-hidden  ${theme === "light"?"bg-gradient-to-b from-gray-900 to-gray-600 text-white" : "bg-gradient-to-b from-gray-200 to-gray-400 text-white"}`} >
 
-        <div className="bg-white p-6 rounded-xl  sm:w-[500px]">
-          <h1 className='text-2xl font-bold text-center mb-4 text-black'>Counter dashboard</h1>
+        <div className="bg-white p-6 rounded-xl  md:w-[500px] overflow-hidden">
+          <div className='flex justify-between'>
+            <h1 className='text-2xl font-bold text-center mb-4 text-black'>Counter dashboard</h1>
+
+            <button className='text-xl  bg-black rounded-2xl text-center p-2 ' onClick={() => setTheme(theme === "light" ? "dark" : "light")}>{theme === "light" ? "🌙 Dark" : "🌞 Light"}</button>
+          </div>
 
           {counters.map((counter, index) => (
-            <div key={index} className="text-black flex justify-between ring-3 rounded-xl px-5 py-4 m-3 overflow-hidden">
+            <div key={index} className=" text-black flex justify-between ring-3 rounded-xl px-5 py-4 m-3 overflow-hidden">
               <h1 className='text-black font-extrabold'>{counter.value}</h1>
 
               <input
                 type="number"
                 value={counter.step}
                 onChange={(e) => {setCounters(prev=>prev.map((c,i)=>i===index?{...c,step:Number(e.target.value)}:c))}}
-                className=" border px-2 py-2  text-black rounded-xl"
+                className=" m-2 border px-2 py-2  text-black rounded-xl"
               />
 
               <div className='flex gap-5'>
