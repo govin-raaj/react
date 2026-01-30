@@ -40,7 +40,6 @@ function App() {
                 value={counter.step}
                 onChange={(e) => {setCounters(prev=>prev.map((c,i)=>i===index?{...c,step:Number(e.target.value)}:c))}}
                 className=" border px-2 py-2  text-black rounded-xl"
-                placeholder="Increment value"
               />
 
               <div className='flex gap-5'>
