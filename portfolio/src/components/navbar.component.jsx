@@ -10,7 +10,7 @@ function Navbar({
     const [menu, setMenu] = useState(false);
 
     return (
-        <nav className={`${classNav} relative relative z-10 flex items-center justify-between px-10 py-6   `}>
+        <nav className={`${classNav} relative  flex items-center justify-between px-10 py-6  `}>
 
             <div className={`${title.class} text-xl font-bold`}>{title.text}</div>
 
@@ -26,7 +26,7 @@ function Navbar({
 
 
             {menu &&
-                <div className="grid gap-2 absolute top-10 right-8  p-3 rounded-md sm:hidden " >
+                <div className="min-[426px]:hidden grid gap-2 absolute top-10 right-8  p-3 rounded-md sm:hidden " >
                     {links.map(((link, i) => {
                         return <a key={i} href={link.url} className={`${link.class}hover:scale-110 font-style: italic`} onClick={() => setMenu(false)}>{link.name}</a>
                     }))}
