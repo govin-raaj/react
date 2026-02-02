@@ -15,7 +15,7 @@ function App() {
 
     console.log("user:", user)
     let temp=[...users]
-    console.log("user:", temp)
+    console.log("users array:", temp)
     temp.push(user)
     setusers(temp)
     setUser({ name: '', email: '' })
