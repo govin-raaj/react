@@ -21,8 +21,8 @@ function Navbar({
 
             </div>
 
-
-            <button className="relative min-[426px]:hidden min-[300px]:font-bold hover:scale-110 hover:text-cyan-300  duration-300 " onClick={() => { setMenu(!menu) }}>☰</button>
+            
+            <button className=" min-[426px]:hidden min-[300px]:font-bold hover:scale-110 hover:text-cyan-300  duration-300 " onClick={() => { setMenu(!menu) }}>☰</button>
 
 
             {menu &&
@@ -32,7 +32,7 @@ function Navbar({
                     }))}
                 </div>
             }
-
+        
         </nav>
     )
 }
