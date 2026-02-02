@@ -38,7 +38,7 @@ const projects = [
       "Smooth UI interactions and animations",
       "Clean and accessible UI layout",
     ],
-    repo: "https://github.com/govin-raaj/portfolio",
+    repo: "https://github.com/govin-raaj/react/tree/main/portfolio",
     demo: "#",
   },
   {
@@ -66,7 +66,7 @@ const projects = [
       "Model evaluation using accuracy and ROC-AUC",
       "Clear visualization of results",
     ],
-    repo: "https://github.com/govin-raaj/",
+    repo: "https://github.com/govin-raaj/Vehicle-Insurance-",
     demo: "#",
   },
   {
@@ -94,7 +94,7 @@ const projects = [
       "Evaluation on unseen test images",
       "Visualization of predictions",
     ],
-    repo: "https://github.com/govin-raaj/portfolio",
+    repo: "https://github.com/govin-raaj/Plant_classification",
     demo: "#",
   },
 ];
