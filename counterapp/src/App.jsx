@@ -69,3 +69,40 @@ function App() {
 }
 
 export default App
+
+
+
+// import React, { useState } from 'react'
+
+// function App() {
+//   const [count, setCount] = useState([0,0])
+  
+//   const inc=(index)=>{
+//     setCount(prev=>{
+//       return prev.map((c,i)=>(
+//         i===index? c+1:c
+//       ))
+//     })
+//   }
+//   const dec=(index)=>{
+//     setCount(prev=>{
+//       return prev.map((c,i)=>(
+//         i===index? c-1:c
+//       ))
+//     })
+//   }
+
+
+//   return (
+//     <>
+//     <h1 className='font-bold text-4xl p-4'>{count[0]}, {count[1]}</h1>
+//     <button className='p-2 m-3 bg-amber-200' onClick={()=>inc(0)}>increase1</button>
+//     <button className='p-2 m-3 bg-amber-200' onClick={()=>dec(0)}>decrease1</button>
+
+//         <button className='p-2 m-3 bg-amber-200'onClick={()=>inc(1)}>increase2</button>
+//     <button className='p-2 m-3 bg-amber-200' onClick={()=>dec(1)}>decrease2</button>
+//     </>
+//   )
+// }
+
+// export default App

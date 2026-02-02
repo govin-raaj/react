@@ -1,54 +1,56 @@
-import { useState } from "react";
-import Navbar from "./components/navbar";
-import Hero from "./components/hero";
-import Card from "./components/cards";
-import heroVariants from "./data/heroVariants";
-import projects from "./data/projects";
-import FilterBar from "./components/filterbar";
+import React, { useState } from 'react'
 
 function App() {
-  const [activeCategory, setActiveCategory] = useState("all");
 
-  const filteredProjects =
-    activeCategory === "all"
-      ? projects
-      : projects.filter(
-          (project) => project.category === activeCategory
-        );
+  const [user, setUser] = useState({name:'',email:''})
+  const [users, setusers] = useState([])
+
+
+   const submit = (e) => {
+    e.preventDefault()
+
+    if(!user.name.trim() || !user.email.trim()){
+      return alert("field cannot be empty")
+    }
+
+    console.log("user:", user)
+    let temp=[...users]
+    console.log("user:", temp)
+    temp.push(user)
+    setusers(temp)
+    setUser({ name: '', email: '' })
+  }
+
 
   return (
     <>
-      <Navbar
-        title={{
-          text: "My Portfolio",
-          class:
-            "text-grey-500 sm:font-bold sm:text-2xl max-[300px]:text-sm hover:scale-110 duration-100",
-        }}
-        links={[
-          { name: "Home", url: "", class: "text-black font-medium hover:scale-110 duration-100" },
-          { name: "Features", url: "#", class: "text-black font-medium hover:scale-110 duration-100" },
-          { name: "Contact", url: "#", class: "text-black font-medium hover:scale-110 duration-100" },
-        ]}
+    <div className='h-screen w-full flex items-center justify-center '>
+        <form className='w-100 h-120 bg-gray-300 p-3 m-4  flex flex-col overflow-hidden items-center justify-start rounded-xl' onSubmit={(e)=>submit(e)}>
+        <input type='text'
+          value={user.name}
+          placeholder='Enter name'
+          className='p-2 m-2 bg-white rounded-2xl text-black font-bold'
+          onChange={(e)=>{
+            console.log("name ",e.target.value)
+            setUser({ ...user, name: e.target.value })
+          }}
         
-        classNav="flex items-center justify-between px-4 rounded-full py-2 mx-3 my-3 bg-gradient-to-r from-[#2A7B9B] via-[#57C785] to-[#EDDD53] ring-2 ring-white "
-      />
-
-      <Hero {...heroVariants.home} />
-
-      <FilterBar
-        activeCategory={activeCategory}
-        onChange={setActiveCategory}
-      />
-
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-        {filteredProjects.map((project) => (
-          <Card key={project.id} {...project} />
-        ))}
-      </section>
-
-      <Hero {...heroVariants.contact} />
+        />
+        <input type='email'
+          value={user.email}
+          placeholder='Enter email'
+          className='p-2 m-2 bg-white rounded-2xl text-black font-bold'
+            onChange={(e)=>{
+            console.log("email ",e.target.value)
+            setUser({ ...user, email: e.target.value })
+          }}
+          
+        />
+        <button type='submit' className='p-2 px-3 m-2 bg-[rgb(196,160,160)]  rounded-2xl'>submit</button>
+      </form>
+    </div>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
