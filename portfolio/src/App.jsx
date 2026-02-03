@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen w-full bg-gradient-to-r from-gray-800 to-gray-400 text-white relative overflow-hidden " >
+      <div className="min-h-screen w-full bg-[#14213d] text-white relative overflow-hidden " >
         <Navbar title={{ text: 'GR', class: 'font-style: italic' }}
           links={[{ name: 'Home', url: "#home" }, { name: "About", url: "#about" }, { name: "Projects", url: "#projects" }]} />
 
