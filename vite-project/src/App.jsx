@@ -70,6 +70,7 @@ function App() {
                 />
                 <input className='bg-white px-3 py-1 rounded-2xl text-lg font-medium'
                   type='text'
+                  maxLength={20}
                   value={user.lastname}
                   placeholder='Enter last Name'
                   onChange={(e) => (setUser({ ...user, lastname: e.target.value }))}
