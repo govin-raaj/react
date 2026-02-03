@@ -59,7 +59,7 @@ function App() {
             <div className=' flex flex-col gap-2 m-2'>
               <label className='font-bold'>Name</label>
               <div className='flex gap-2'>
-                <input className='bg-white px-3 py-1 rounded-2xl text-lg font-medium'
+                <input className='px-3 py-1 rounded-2xl text-lg font-medium bg-[#FDFBD4] '
                   type='text'
                   required
                   minLength={3}
@@ -68,7 +68,7 @@ function App() {
                   placeholder='Enter First Name'
                   onChange={(e) => (setUser({ ...user, firstname: e.target.value }))}
                 />
-                <input className='bg-white px-3 py-1 rounded-2xl text-lg font-medium'
+                <input className='bg-[#FDFBD4]  px-3 py-1 rounded-2xl text-lg font-medium'
                   type='text'
                   maxLength={20}
                   value={user.lastname}
@@ -81,14 +81,14 @@ function App() {
             <div className=' flex flex-col gap-2 m-2'>
               <label className='font-bold'>Contact</label>
               <div className='flex gap-2'>
-                <input className='bg-white px-3 py-1 rounded-2xl text-lg font-medium'
+                <input className='bg-[#FDFBD4]  px-3 py-1 rounded-2xl text-lg font-medium'
                   type='email'
                   required
                   value={user.email}
                   placeholder='Enter email'
                   onChange={(e) => (setUser({ ...user, email: e.target.value }))}
                 />
-                <input className='bg-white px-3 py-1 rounded-2xl text-lg font-medium'
+                <input className='bg-[#FDFBD4]  px-3 py-1 rounded-2xl text-lg font-medium'
                   type='text'
                   value={user.contact}
                   maxLength={10}
@@ -101,7 +101,7 @@ function App() {
               <div className=' flex flex-col gap-2 m-2'>
                 <label className='font-bold'>Password</label>
                 <div className='flex gap-2'>
-                  <input className='bg-white px-3 py-1 rounded-2xl text-lg font-medium'
+                  <input className='bg-[#FDFBD4]  px-3 py-1 rounded-2xl text-lg font-medium'
                     type='password'
                     value={user.password}
                     required
@@ -110,7 +110,7 @@ function App() {
                     placeholder='Enter password'
                     onChange={(e) => (setUser({ ...user, password: e.target.value }))}
                   />
-                  <input className='bg-white px-3 py-1 rounded-2xl text-lg font-medium'
+                  <input className='bg-[#FDFBD4]  px-3 py-1 rounded-2xl text-lg font-medium'
                     type='password'
                     value={user.confirmPass}
                     required
