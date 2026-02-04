@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 function App() {
 
-  const [user, setUser] = useState({ email: '', password: '', firstname: '', lastname: '', confirmPass: '', contact: '' })
+  const [user, setUser] = useState({ email: '', password: '', firstname: '', lastname: '', confirmPass: '', contact: ''})
   const [users, setusers] = useState([])
 
   const handleSubmit = (e) => {
@@ -96,9 +96,7 @@ function App() {
                   onChange={(e) => (setUser({ ...user, contact: e.target.value }))}
                 />
               </div>
-
-
-              <div className=' flex flex-col gap-2 m-2'>
+               <div className=' flex flex-col gap-2 m-2'>
                 <label className='font-bold'>Password</label>
                 <div className='flex gap-2'>
                   <input className='bg-[#FDFBD4]  px-3 py-1 rounded-2xl text-lg font-medium'
