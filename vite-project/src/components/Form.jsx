@@ -39,7 +39,7 @@ function Form() {
             </div>
 
             <div>
-                <form className=' flex flex-col p-4 gap-3 ' onSubmit={handleSubmit(onSubmit)}>
+                <form className='bg-white flex flex-col p-4 gap-3' onSubmit={handleSubmit(onSubmit)}>
 
                     <div className=' flex flex-col '>
                         <label>Name</label>
