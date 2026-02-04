@@ -34,7 +34,7 @@ const UserPage = () => {
 
   return (
     <div className="min-h-screen bg-slate-900 text-white px-6 py-10">
-      <div className="max-w-6xl mx-auto">
+      <div className="w-full mx-auto">
        
         <h1 className="text-3xl font-bold text-center mb-8">
           User Directory 
