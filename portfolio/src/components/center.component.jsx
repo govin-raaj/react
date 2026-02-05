@@ -12,7 +12,7 @@ function Center({ name = { text: "", class: "" }, about = { text: "", class: "" 
 
         <p className={`md:text-lg text-[#fca311] mb-10 ${about.class}`}>{about.text}</p>
 
-        <button className="mx-auto  bg-[#affc41] text-black px-6 py-3 rounded-xl font-medium shadow-lg hover:bg-gray-200 hover:scale-105 active:scale-95 duration-500 ">
+        <button className="mx-auto  bg-[#affc41] text-black px-6 py-3 rounded-xl font-medium shadow-lg hover:bg-gray-200 hover:scale-105 active:scale-95 duration-500 cursor-pointer ">
           Resume</button>
       </div>
 

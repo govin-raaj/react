@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { contactContext } from "../App";
 
 
 function Navbar({
@@ -7,6 +8,7 @@ function Navbar({
     classNav = ''
 }) {
 
+    const {contact,setContact} = useContext(contactContext)
     const [menu, setMenu] = useState(false);
 
     return (
@@ -16,7 +18,7 @@ function Navbar({
 
             <div className="flex gap-8 md:text-lg  max-[426px]:hidden ">
                 {links.map(((link, i) => {
-                    return <a key={i} href={link.url} className={`hover:scale-110  hover:text-[#f77f00] duration-300 font-style: italic active:text-red-700 ${link.class} `}>{link.name}</a>
+                    return <a key={i} href={link.url} onClick={() => link.name === "Contact" && setContact(p=>!p)} className={`hover:scale-110  hover:text-[#f77f00] duration-300 font-style: italic active:text-red-700 ${link.class} `}>{link.name}</a>
                 }))}
 
             </div>
