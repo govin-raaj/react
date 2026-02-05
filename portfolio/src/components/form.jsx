@@ -15,6 +15,8 @@ function Form() {
 
     function onSubmit(data) {
         console.log(data)
+        reset()
+        setShowPassword(false)
     }
 
     const inputStyle = (field, value) => {
@@ -33,13 +35,14 @@ function Form() {
 
 
     return (
-        <div className='min-h-screen w-full  flex flex-col  gap-2 p-5'>
-            <div className='flex items-center justify-center'>
-                <h1 className='text-2xl font-bold '>Contact Form</h1>
+        <div className='min-h-screen w-full  flex flex-col text-black  gap-10 p-10 scroll-mt-20 mt-20' id='contact'>
+            <div className='flex flex-col items-center justify-center '>
+                <h1 className='md:text-6xl text-4xl font-bold text-white '>Get in Touch</h1>
+                <p className='text-amber-300 text-center'>I'm always open to discussing new opportunities, interesting projects, or just having a conversation about AI and technology. Let's connect!</p>
             </div>
 
             <div>
-                <form className=' flex flex-col p-4 gap-3 overflow-hidden' onSubmit={handleSubmit(onSubmit)}>
+                <form className='bg-white flex flex-col p-4 gap-3 overflow-hidden' onSubmit={handleSubmit(onSubmit)}>
 
                     <div className=' flex flex-col w-full '>
                         <label>Name</label>

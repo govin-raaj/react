@@ -8,41 +8,40 @@ const UserPage = () => {
 
   useEffect(() => {
     if (!shouldFetch) return;
-
-    const fetchUsers = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-
-        const response = await fetch("https://dummyjson.com/users");
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch users");
-        }
-        const data = await response.json();
-        setUsers(data.users);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
-      }
-    }
-
     fetchUsers();
-
   }, [shouldFetch]);
+
+  
+  const fetchUsers = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+
+      const response = await fetch("https://dummyjson.com/users");
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch users");
+      }
+      const data = await response.json();
+      setUsers(data.users);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <div className="min-h-screen bg-slate-900 text-white px-6 py-10">
       <div className="w-full mx-auto">
-       
+
         <h1 className="text-3xl font-bold text-center mb-8">
-          User Directory 
+          User Directory
         </h1>
 
         <div className="flex justify-center mb-6">
           <button
-            onClick={() => setShouldFetch(true)}
+            onClick={() => setShouldFetch(p => !p)}
             disabled={loading}
             className="px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700  disabled:opacity-50"
           >
