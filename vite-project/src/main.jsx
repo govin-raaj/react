@@ -7,7 +7,7 @@ import User from './components/user.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Form/>
+    <App/>
     
   </StrictMode>,
 )
