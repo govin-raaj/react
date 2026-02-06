@@ -1,17 +1,19 @@
 import React from 'react'
 import Btn from '../buttons/btn'
+import Text from '../text/text'
 
 const Navbar = ({
     heading={text:'',class:''},
-    links=[{text:'',url:'',class:''}],
+    links=[{text:'',url:'',class:'',onClick}],
     classname=''
 }) => {
   return (
     <nav className={`w-full p-4 flex items-center justify-between shadow-xl  ${classname}`}>
-        <h1 className={`text-4xl font-bold text-black  ${heading.class}`}>{heading.text}</h1>
+        
+        <Text type='h1' text={heading.text} className={`text-4xl font-bold text-black  ${heading.class}`} />
 
         <div>
-            {links.map((el,i)=>{return( <Btn key={i} text={el.text} classname={el.class}/>)}
+            {links.map((el,i)=>{return( <Btn key={i} {...el} />)}
             )}
         </div>
     </nav>

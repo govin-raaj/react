@@ -1,30 +1,34 @@
 import React from 'react'
+import Text from '../text/text'
 
 const Cardhelper = (
-     {
-        image = { url: '' ,tag:''},
+    {
+        image = { url: '', tag: '' },
         country = { text: '', class: '' },
         subheading = { text: '', class: '' },
-        date=''
+        date = ''
     }
 ) => {
     return (
-        <div className='relative h-100 w-50 md:h-150 md:w-100 m-10 shrink-0 overflow-hidden' >
-            <div className='h-full w-full absolute z-10'>   
-                <img src={image.url} alt={image.tag}
-                    className='h-full w-full object-fit '
-                />
-            </div>
-
-            <div className='h-full w-full absolute z-20 flex items-end p-4'>
-                <div>
-                    <p className='text-xl text-white'>{date}</p>
-                    <p className={`text-2xl ${subheading.class}`}>{subheading.text}</p>
-                    <h1 className={`text-5xl ${country.class}`}>{country.text}</h1>
+        (image.url) && (
+            <div  className='relative h-50 md:w-[33%] w-full  shrink-0 overflow-hidden rounded-2xl card-item'  >
+                <div className='h-full w-full absolute z-10'>
+                    <img src={image.url} alt={image.tag}
+                        className='h-full w-full object-cover '
+                    />
                 </div>
-            </div>
 
-        </div>
+                <div className='h-full w-full absolute z-20 flex items-end p-4 overflow-hidden'>
+                    <div>
+                        
+                        <Text type={'p'} text={date} className={'md:text-xl text-white'} />
+                        <Text type={'p'} text={subheading.text} className={`md:text-2xl text-white ${subheading.class}`} />
+                        <Text type={'h1'} text={country.text} className={`md:text-5xl text-2xl ${country.class}`} />
+                    </div>
+                </div>
+
+            </div>
+        )
     )
 }
 
