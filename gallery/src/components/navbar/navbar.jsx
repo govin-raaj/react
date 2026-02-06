@@ -8,11 +8,11 @@ const Navbar = ({
     classname=''
 }) => {
   return (
-    <nav className={`w-full p-4 flex items-center justify-between shadow-xl  ${classname}`}>
+    <nav className={`w-1/2 p-4 flex items-center justify-between shadow-xl m-2 overflow-hidden ${classname}`}>
         
-        <Text type='h1' text={heading.text} className={`text-4xl font-bold text-black  ${heading.class}`} />
+        <Text type='h1' text={heading.text} className={`md:text-4xl text-xl font-bold text-black  ${heading.class}`} />
 
-        <div>
+        <div >
             {links.map((el,i)=>{return( <Btn key={i} {...el} />)}
             )}
         </div>

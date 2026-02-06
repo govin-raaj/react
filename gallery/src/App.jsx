@@ -2,6 +2,7 @@ import { createContext, useState } from 'react'
 import Navbar from './components/navbar/navbar'
 import Card from './components/card/card'
 import cardsData from './data/card'
+import Text from './components/text/text'
 
 const showstate = createContext()
 
@@ -16,11 +17,12 @@ function App() {
 
         <Navbar heading={{ text: 'Port of Calls' }}
           links={[{ text: 'see all', class: 'rounded-xl underline', onClick: () => setShowall(prev => !prev) },
-          { text: '<-', class: 'rounded-xl ', onClick: () => setScrollDir("left") },
+          { text: '<-', class: 'rounded-xl  ', onClick: () => setScrollDir("left") },
           { text: '->', class: 'rounded-xl ', onClick: () => setScrollDir("right") }
           ]} />
 
-        <Card data={cardsData} />
+          <Card data={cardsData} />
+             
 
       </showstate.Provider>
     </>
