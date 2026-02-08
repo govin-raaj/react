@@ -1,5 +1,5 @@
 import React from 'react'
-import Techcard from './techcard.component'
+import Techcard from './project/techcard.component'
 
 function About() {
     return (

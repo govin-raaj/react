@@ -1,5 +1,6 @@
-import { useContext, useState } from "react";
-import { contactContext } from "../App";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+
 
 
 function Navbar({
@@ -8,7 +9,7 @@ function Navbar({
     classNav = ''
 }) {
 
-    const {contact,setContact} = useContext(contactContext)
+    // const {contact,setContact} = useContext(contactContext)
     const [menu, setMenu] = useState(false);
 
     return (
@@ -18,7 +19,11 @@ function Navbar({
 
             <div className="flex gap-8 md:text-lg  max-[426px]:hidden ">
                 {links.map(((link, i) => {
-                    return <a key={i} href={link.url} onClick={() => link.name === "Contact" && setContact(p=>!p)} className={`hover:scale-110  hover:text-[#f77f00] duration-300 font-style: italic active:text-red-700 ${link.class} `}>{link.name}</a>
+                    return <NavLink key={i} to={link.url} 
+                    // onClick={() => link.name === "Contact" && setContact(p=>!p)} 
+                    className={({ isActive }) => `hover:scale-110  hover:text-[#f77f00] duration-300 font-style: italic 
+                    ${isActive?'text-red-600':""} ${link.class} `}>
+                        {link.name}</NavLink>
                 }))}
 
             </div>
@@ -30,7 +35,10 @@ function Navbar({
             {menu &&
                 <div className="min-[426px]:hidden grid gap-2 absolute top-10 right-4  p-3 rounded-md sm:hidden " >
                     {links.map(((link, i) => {
-                        return <a key={i} href={link.url} className={`hover:scale-110  hover:text-[#f77f00]  duration-300 font-style: italic ${link.class} `} onClick={() => setMenu(false)}>{link.name}</a>
+                        return <NavLink key={i} to={link.url} 
+                        className={({ isActive }) => `hover:scale-110  hover:text-[#f77f00]  duration-300 font-style: italic  
+                        ${isActive?'text-red-600':""} ${link.class}`} 
+                        onClick={() => setMenu(false)}>{link.name}</NavLink>
                     }))}
                 </div>
             }
